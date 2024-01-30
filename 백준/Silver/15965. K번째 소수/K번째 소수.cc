@@ -7,24 +7,25 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
-	long long int num;
-	vector<bool> A(500001);
+	long long int num,sum=0;
+	vector<bool> A(10000001);
 	fill(A.begin(), A.end(), true);
 	A[0] = A[1] = false;
-	for (long long int i = 2; i <= sqrt(500000); i++) {
+	for (long long int i = 2; i <= sqrt(10000000); i++) {
 		if (A[i]) {
 			long long int j = 2;
-			while (i * j <= 500000) {
+			while (i * j <= 10000000) {
 				A[i * j] = false;
 				j += 1;
 			}
 		}
 	}
-	long long int i,cnt = 0;
 	cin >> num;
-	for (i = 2; cnt != num; i++) {
-		if (A[i])
-			cnt++;
+	for (long long int i = 0; i <= 50000000; i++) {
+		sum += A[i];
+		if (sum == num) {
+			cout << i;
+			break;
+		}
 	}
-	cout << i-1;
 }
