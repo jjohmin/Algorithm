@@ -2,8 +2,8 @@
 using namespace std;
 
 int main() {
-	int n, m;
-	int a, b;
+	long long int n, m;
+	long long int a, b;
 	cin >> n >> m >> a >> b;
 	cout << a * b;
 }
